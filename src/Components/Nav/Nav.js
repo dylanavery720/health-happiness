@@ -20,17 +20,17 @@ class Nav extends Component {
       <Paper zDepth={1}>
         <BottomNavigation selectedIndex={this.state.selectedIndex}>
           <BottomNavigationItem
-            label="Recents"
+            label="Blog"
             icon={recentsIcon}
             onTouchTap={() => this.select(0)}
           />
           <BottomNavigationItem
-            label="Favorites"
+            label="About"
             icon={favoritesIcon}
             onTouchTap={() => this.select(1)}
           />
           <BottomNavigationItem
-            label="Nearby"
+            label="Resources"
             icon={nearbyIcon}
             onTouchTap={() => this.select(2)}
           />
