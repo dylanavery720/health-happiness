@@ -3,4 +3,7 @@
 
 .medium {
   font-family: 'Roboto', sans-serif;
+  border: none;
+  overflow: hidden;
+  margin: 10px;
 }

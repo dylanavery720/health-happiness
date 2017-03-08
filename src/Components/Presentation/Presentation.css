@@ -10,3 +10,18 @@
   width: 300px;
   overflow: auto;
 }
+
+.ppoint-box{
+  background-color: #EBC697;
+}
+
+.ppoint-underline{
+  color: #61A5D6;
+  border-bottom: 2px solid #61A5D6;
+  width: 80%;
+  margin: 0 auto;
+}
+
+li {
+  margin: 5px;
+}
