@@ -3,7 +3,7 @@ import FontIcon from 'material-ui/FontIcon';
 import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
 import Paper from 'material-ui/Paper';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
-
+import { browserHistory } from 'react-router';
 const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
 const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
 const nearbyIcon = <IconLocationOn />;
@@ -13,7 +13,10 @@ class Nav extends Component {
     selectedIndex: 0,
   };
 
-  select = (index) => this.setState({selectedIndex: index});
+  select = (route, index) => {
+    this.setState({selectedIndex: index})
+    browserHistory.push(`${route}`)
+  }
 
   render() {
     return (
@@ -22,17 +25,18 @@ class Nav extends Component {
           <BottomNavigationItem
             label="Blog"
             icon={recentsIcon}
-            onTouchTap={() => this.select(0)}
+            onTouchTap={() => this.select('blog', 0)}
           />
           <BottomNavigationItem
             label="About"
             icon={favoritesIcon}
-            onTouchTap={() => this.select(1)}
+            onTouchTap={(e) => this.select('about', 1)}
           />
           <BottomNavigationItem
             label="Resources"
+            id="resources"
             icon={nearbyIcon}
-            onTouchTap={() => this.select(2)}
+            onTouchTap={(e) => this.select(e, 2)}
           />
         </BottomNavigation>
       </Paper>

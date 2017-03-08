@@ -1,62 +1,86 @@
 import React from 'react';
-import {Tabs, Tab} from 'material-ui/Tabs';
-// From https://github.com/oliviertassinari/react-swipeable-views
-import SwipeableViews from 'react-swipeable-views';
+import {GridList, GridTile} from 'material-ui/GridList';
+import IconButton from 'material-ui/IconButton';
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
 const styles = {
-  headline: {
-    fontSize: 24,
-    paddingTop: 16,
-    marginBottom: 12,
-    fontWeight: 400,
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
   },
-  slide: {
-    padding: 10,
+  gridList: {
+    display: 'flex',
+    flexWrap: 'nowrap',
+    overflowX: 'auto',
+  },
+  titleStyle: {
+    color: 'rgb(0, 188, 212)',
   },
 };
 
-export default class TabsExampleSwipeable extends React.Component {
+const tilesData = [
+  {
+    img: 'images/grid-list/00-52-29-429_640.jpg',
+    title: 'Breakfast',
+    body: 'jill111',
+  },
+  {
+    img: 'images/grid-list/burger-827309_640.jpg',
+    title: 'Tasty burger',
+    body: 'pashminu',
+  },
+  {
+    img: 'images/grid-list/camera-813814_640.jpg',
+    title: 'Camera',
+    body: 'Danson67',
+  },
+  {
+    img: 'images/grid-list/morning-819362_640.jpg',
+    title: 'Morning',
+    body: 'fancycrave1',
+  },
+  {
+    img: 'images/grid-list/hats-829509_640.jpg',
+    title: 'Hats',
+    body: 'Hans',
+  },
+  {
+    img: 'images/grid-list/honey-823614_640.jpg',
+    title: 'Honey',
+    body: 'fancycravel',
+  },
+  {
+    img: 'images/grid-list/vegetables-790022_640.jpg',
+    title: 'Vegetables',
+    body: 'jill111',
+  },
+  {
+    img: 'images/grid-list/water-plant-821293_640.jpg',
+    title: 'Water plant',
+    body: 'BkrmadtyaKarki',
+  },
+];
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      slideIndex: 0,
-    };
-  }
-
-  handleChange = (value) => {
-    this.setState({
-      slideIndex: value,
-    });
-  };
-
-  render() {
-    return (
-      <div>
-        <Tabs
-          onChange={this.handleChange}
-          value={this.state.slideIndex}
+/**
+ * This example demonstrates the horizontal scrollable single-line grid list of images.
+ */
+const GridListExampleSingleLine = () => (
+  <div style={styles.root}>
+    <GridList style={styles.gridList} cols={2.2}>
+      {tilesData.map((tile) => (
+        <GridTile
+          key={tile.img}
+          title={tile.title}
+          actionIcon={<IconButton><StarBorder color="rgb(0, 188, 212)" /></IconButton>}
+          titleStyle={styles.titleStyle}
+          titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
         >
-          <Tab label="Tab One" value={0} />
-          <Tab label="Tab Two" value={1} />
-          <Tab label="Tab Three" value={2} />
-        </Tabs>
-        <SwipeableViews
-          index={this.state.slideIndex}
-          onChangeIndex={this.handleChange}
-        >
-          <div>
-            <h2 style={styles.headline}>Tabs with slide effect</h2>
-            Swipe to see the next slide.<br />
-          </div>
-          <div style={styles.slide}>
-            slide n°2
-          </div>
-          <div style={styles.slide}>
-            slide n°3
-          </div>
-        </SwipeableViews>
-      </div>
-    );
-  }
-}
+          <img src={tile.img} />
+        </GridTile>
+      ))}
+    </GridList>
+  </div>
+);
+
+export default GridListExampleSingleLine;
