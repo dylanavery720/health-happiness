@@ -10,7 +10,7 @@
 }
 
 .App-header {
-  background-color: lightblue;
+  background-color: #61A5D6;
   padding: 20px;
   color: white;
   font-family: 'Raleway', sans-serif;
@@ -23,6 +23,8 @@
 .app-footer {
   position: fixed;
   bottom: 0;
+  left: 0;
+  display: inline-block;
   width: 100%;
   z-index: 1;
 }

@@ -4,9 +4,9 @@ import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigati
 import Paper from 'material-ui/Paper';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
 import { browserHistory } from 'react-router';
-const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
-const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
-const nearbyIcon = <IconLocationOn />;
+const recentsIcon = <FontIcon className="material-icons">facebook</FontIcon>;
+const favoritesIcon = <FontIcon className="material-icons">question_answer</FontIcon>;
+const contactIcon = <FontIcon className="material-icons">email</FontIcon>;
 
 class Nav extends Component {
   state = {
@@ -33,9 +33,8 @@ class Nav extends Component {
             onTouchTap={(e) => this.select('about', 1)}
           />
           <BottomNavigationItem
-            label="Resources"
-            id="resources"
-            icon={nearbyIcon}
+            label="Contact"
+            icon={contactIcon}
             onTouchTap={(e) => this.select(e, 2)}
           />
         </BottomNavigation>
