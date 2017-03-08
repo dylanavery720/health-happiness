@@ -4,3 +4,9 @@
 .presentation {
   font-family: 'Roboto', sans-serif;
 }
+
+.ppoint {
+  height: 350px;
+  width: 500px;
+  overflow: auto;
+}

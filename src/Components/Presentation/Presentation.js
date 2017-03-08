@@ -6,7 +6,6 @@ import NavTabs from '../NavTabs/NavTabs'
 const Presentation = (props) => {
     return (
       <div className="presentation">
-        <p>SWIPEABLE CARDS AKA ...</p>
         <MuiThemeProvider>
           <NavTabs />
         </MuiThemeProvider>
