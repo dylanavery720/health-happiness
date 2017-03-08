@@ -76,17 +76,8 @@ class NavTabs extends React.Component {
             {/* <img className="ppoint" src="/images/title.jpg"/> */}
 
               <div className="ppoint-box">
-                <h1 className="ppoint-underline">Risk</h1>
-                <ul>
-                  <li>Health and Happiness and it’s ownership has managed risk for twenty years
-in assisted living and never been sued.</li>
-                  <li>Through our innovative and preventative care approach, we have reduced
-hospital and emergency room visits.</li>
-                  <li>Our integrated health delivery system ensures that a professional team
-manages every individuals care, which effectively spreads the risk.</li>
-                  <li>Communication with family members, guardians, powers of attorney, and all
-rlevant parties is key to managing risk.</li>
-                </ul>
+                <h1 className="ppoint-underline">Health and Happiness LLC</h1>
+                <h2></h2>
               </div>
               {this.renderStepActions(0)}
             </StepContent>
@@ -94,7 +85,16 @@ rlevant parties is key to managing risk.</li>
           <Step>
             <StepLabel>Create an ad group</StepLabel>
             <StepContent>
-              <img className="ppoint" src="/images/risk.jpg"/>
+              {/* <img className="ppoint" src="/images/risk.jpg"/> */}
+              <div className="ppoint-box">
+                <h1 className="ppoint-underline">Risk</h1>
+                <ul>
+                  <li>Never been sued</li>
+                  <li>Reduced hospital visits</li>
+                  <li>Integrated health delivery system </li>
+                  <li>Communication with family members and guardians </li>
+                </ul>
+              </div>
               {this.renderStepActions(1)}
             </StepContent>
           </Step>
