@@ -9,7 +9,6 @@ const Presentation = (props) => {
         <MuiThemeProvider>
           <NavTabs />
         </MuiThemeProvider>
-        <p>MOBILE FIRST</p>
       </div>
     );
 }

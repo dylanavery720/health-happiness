@@ -3,90 +3,97 @@ import {
   Step,
   Stepper,
   StepLabel,
+  StepContent,
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import ExpandTransition from 'material-ui/internal/ExpandTransition';
-import TextField from 'material-ui/TextField';
 
 /**
- * A contrived example using a transition between steps
+ * Vertical steppers are designed for narrow screen sizes. They are ideal for mobile.
+ *
+ * To use the vertical stepper with the contained content as seen in spec examples,
+ * you must use the `<StepContent>` component inside the `<Step>`.
+ *
+ * <small>(The vertical stepper can also be used without `<StepContent>` to display a basic stepper.)</small>
  */
 class NavTabs extends React.Component {
 
   state = {
-    loading: false,
     finished: false,
     stepIndex: 0,
   };
 
-  dummyAsync = (cb) => {
-    this.setState({loading: true}, () => {
-      this.asyncTimer = setTimeout(cb, 500);
-    });
-  };
-
   handleNext = () => {
     const {stepIndex} = this.state;
-    if (!this.state.loading) {
-      this.dummyAsync(() => this.setState({
-        loading: false,
-        stepIndex: stepIndex + 1,
-        finished: stepIndex >= 6,
-      }));
-    }
+    this.setState({
+      stepIndex: stepIndex + 1,
+      finished: stepIndex >= 2,
+    });
   };
 
   handlePrev = () => {
     const {stepIndex} = this.state;
-    if (!this.state.loading) {
-      this.dummyAsync(() => this.setState({
-        loading: false,
-        stepIndex: stepIndex - 1,
-      }));
+    if (stepIndex > 0) {
+      this.setState({stepIndex: stepIndex - 1});
     }
   };
 
-  getStepContent(stepIndex) {
-    switch (stepIndex) {
-      //TRY TO MAKE TITLE PAGE AND RISK PAGE WITHOUT IMAGE JUST CSS
-      case 0:
-        return (
-          <img className="ppoint" src="/images/title.jpg"/>
-        );
-      case 1:
-        return (
-          <img className="ppoint" src="/images/risk.jpg"/>
-        );
-      case 2:
-        return (
-          <img className="ppoint" src="/images/weaknesses.jpg"/>
-        );
-      case 3:
-        return (
-          <img className="ppoint" src="/images/strengths.jpg"/>
-        );
-      case 4:
-        return (
-          <img className="ppoint" src="/images/nutrition.jpg"/>
-        );
-      case 5:
-        return (
-          <img className="ppoint" src="/images/familyburdens.jpg"/>
-        );
-      default:
-        return 'You\'re a long way from home sonny jim!';
-    }
+  renderStepActions(step) {
+    const {stepIndex} = this.state;
+
+    return (
+      <div style={{margin: '12px 0'}}>
+        <RaisedButton
+          label={stepIndex === 2 ? 'Finish' : 'Next'}
+          disableTouchRipple={true}
+          disableFocusRipple={true}
+          primary={true}
+          onTouchTap={this.handleNext}
+          style={{marginRight: 12}}
+        />
+        {step > 0 && (
+          <FlatButton
+            label="Back"
+            disabled={stepIndex === 0}
+            disableTouchRipple={true}
+            disableFocusRipple={true}
+            onTouchTap={this.handlePrev}
+          />
+        )}
+      </div>
+    );
   }
 
-  renderContent() {
+  render() {
     const {finished, stepIndex} = this.state;
-    const contentStyle = {margin: '0 16px', overflow: 'hidden'};
 
-    if (finished) {
-      return (
-        <div style={contentStyle}>
-          <p>
+    return (
+      <div style={{maxWidth: 380, maxHeight: 400, margin: 'auto'}}>
+        <Stepper activeStep={stepIndex} orientation="vertical">
+          <Step>
+            <StepLabel>Select campaign settings</StepLabel>
+            <StepContent>
+            <img className="ppoint" src="/images/title.jpg"/>
+              {this.renderStepActions(0)}
+            </StepContent>
+          </Step>
+          <Step>
+            <StepLabel>Create an ad group</StepLabel>
+            <StepContent>
+              <img className="ppoint" src="/images/risk.jpg"/>
+              {this.renderStepActions(1)}
+            </StepContent>
+          </Step>
+          <Step>
+            <StepLabel>Create an ad</StepLabel>
+            <StepContent>
+              <img className="ppoint" src="/images/weaknesses.jpg"/>
+              {this.renderStepActions(2)}
+            </StepContent>
+          </Step>
+        </Stepper>
+        {finished && (
+          <p style={{margin: '20px 0', textAlign: 'center'}}>
             <a
               href="#"
               onClick={(event) => {
@@ -95,60 +102,9 @@ class NavTabs extends React.Component {
               }}
             >
               Click here
-            </a> to reset the presentation.
+            </a> to reset the example.
           </p>
-        </div>
-      );
-    }
-
-    return (
-      <div style={contentStyle}>
-        <div>{this.getStepContent(stepIndex)}</div>
-        <div style={{marginTop: 24, marginBottom: 12}}>
-          <FlatButton
-            label="Back"
-            disabled={stepIndex === 0}
-            onTouchTap={this.handlePrev}
-            style={{marginRight: 12}}
-          />
-          <RaisedButton
-            label={stepIndex === 6 ? 'Finish' : 'Next'}
-            primary={true}
-            onTouchTap={this.handleNext}
-          />
-        </div>
-      </div>
-    );
-  }
-
-  render() {
-    const {loading, stepIndex} = this.state;
-
-    return (
-      <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
-        <Stepper activeStep={stepIndex}>
-          <Step>
-            <StepLabel>Welcome</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Risk</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Weaknesses</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Strengths</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Nutrition</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Family Burden</StepLabel>
-          </Step>
-        </Stepper>
-        <ExpandTransition loading={loading} open={true}>
-          {this.renderContent()}
-        </ExpandTransition>
+        )}
       </div>
     );
   }
