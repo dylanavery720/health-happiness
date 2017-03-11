@@ -10,7 +10,7 @@
 }
 
 .App-header {
-  background-color: lightblue;
+  background-color: rgb(0, 188, 212);
   padding: 20px;
   color: white;
   font-family: 'Raleway', sans-serif;
@@ -18,6 +18,26 @@
 
 .App-intro {
   font-size: large;
+}
+
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  z-index: 1;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  color: black;
+}
+
+a img {
+  height: 100px;
+  width:200px;
+  margin: 30px 40px 20px 0px;
 }
 
 @keyframes App-logo-spin {

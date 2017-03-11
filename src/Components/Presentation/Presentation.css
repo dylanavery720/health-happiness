@@ -4,3 +4,24 @@
 .presentation {
   font-family: 'Roboto', sans-serif;
 }
+
+.ppoint {
+  height: 200px;
+  width: 320px;
+}
+
+.ppoint-box{
+  background-color: #EBC697;
+  padding: 15px;
+}
+
+.ppoint-underline{
+  color: rgb(0, 188, 212);
+  border-bottom: 2px solid rgb(0, 188, 212);
+  width: 80%;
+  margin: 0 auto;
+}
+
+li {
+  text-align: left;
+}

@@ -3,4 +3,17 @@
 
 .medium {
   font-family: 'Roboto', sans-serif;
+  border: none;
+  overflow: hidden;
+}
+
+.medium-box {
+  margin-top: 10px;
+  padding-bottom: 80px;
+  padding-top: 10px;
+  background-color: #f2f2f2;
+  width: 375px;
+  display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
 }

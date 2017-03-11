@@ -3,36 +3,39 @@ import FontIcon from 'material-ui/FontIcon';
 import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
 import Paper from 'material-ui/Paper';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
-
-const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
-const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
-const nearbyIcon = <IconLocationOn />;
+import { browserHistory } from 'react-router';
+const recentsIcon = <FontIcon className="material-icons">book</FontIcon>;
+const favoritesIcon = <FontIcon className="material-icons">question_answer</FontIcon>;
+const contactIcon = <FontIcon className="material-icons">email</FontIcon>;
 
 class Nav extends Component {
   state = {
     selectedIndex: 0,
   };
 
-  select = (index) => this.setState({selectedIndex: index});
+  select = (route, index) => {
+    this.setState({selectedIndex: index})
+    browserHistory.push(`${route}`)
+  }
 
   render() {
     return (
       <Paper zDepth={1}>
         <BottomNavigation selectedIndex={this.state.selectedIndex}>
           <BottomNavigationItem
-            label="Recents"
+            label="Blog"
             icon={recentsIcon}
-            onTouchTap={() => this.select(0)}
+            onTouchTap={() => this.select('blog', 0)}
           />
           <BottomNavigationItem
-            label="Favorites"
+            label="About"
             icon={favoritesIcon}
-            onTouchTap={() => this.select(1)}
+            onTouchTap={(e) => this.select('about', 1)}
           />
           <BottomNavigationItem
-            label="Nearby"
-            icon={nearbyIcon}
-            onTouchTap={() => this.select(2)}
+            label="Contact"
+            icon={contactIcon}
+            onTouchTap={(e) => this.select('contact', 2)}
           />
         </BottomNavigation>
       </Paper>

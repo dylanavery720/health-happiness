@@ -8,7 +8,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Health and Happiness</h2>
+          <h1>Health and Happiness, LLC</h1>
+          <h3>Your Premier Assisted Living Operator</h3>
         </div>
         {this.props.children}
         <div className="app-footer">
