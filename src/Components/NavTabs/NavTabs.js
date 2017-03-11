@@ -191,7 +191,7 @@ class NavTabs extends React.Component {
               }}
             >
               Click here
-            </a> to reset the example.
+            </a> to do again.
           </p>
         )}
       </div>

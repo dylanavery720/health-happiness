@@ -35,7 +35,7 @@ class Nav extends Component {
           <BottomNavigationItem
             label="Contact"
             icon={contactIcon}
-            onTouchTap={(e) => this.select(e, 2)}
+            onTouchTap={(e) => this.select('contact', 2)}
           />
         </BottomNavigation>
       </Paper>
