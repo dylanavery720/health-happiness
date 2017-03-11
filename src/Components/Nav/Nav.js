@@ -4,7 +4,7 @@ import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigati
 import Paper from 'material-ui/Paper';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
 import { browserHistory } from 'react-router';
-const recentsIcon = <FontIcon className="material-icons">facebook</FontIcon>;
+const recentsIcon = <FontIcon className="material-icons">book</FontIcon>;
 const favoritesIcon = <FontIcon className="material-icons">question_answer</FontIcon>;
 const contactIcon = <FontIcon className="material-icons">email</FontIcon>;
 

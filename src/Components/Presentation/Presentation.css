@@ -6,8 +6,8 @@
 }
 
 .ppoint {
-  height: 350px;
-  width: 300px;
+  height: 200px;
+  width: 320px;
 }
 
 .ppoint-box{
@@ -16,12 +16,12 @@
 }
 
 .ppoint-underline{
-  color: #61A5D6;
-  border-bottom: 2px solid #61A5D6;
+  color: rgb(0, 188, 212);
+  border-bottom: 2px solid rgb(0, 188, 212);
   width: 80%;
   margin: 0 auto;
 }
 
 li {
-  margin: 5px;
+  text-align: left;
 }
