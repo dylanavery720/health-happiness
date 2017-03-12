@@ -1,7 +1,7 @@
 {
   "name": "health-happiness",
   "version": "0.1.0",
-  "homepage": "./build",
+  "homepage": "./",
   "devDependencies": {
     "material-ui": "^0.17.0",
     "react-router": "^3.0.2",
