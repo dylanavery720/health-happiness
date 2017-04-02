@@ -20,6 +20,11 @@
   font-size: large;
 }
 
+.powerpoint {
+  height: 400px;
+  width: 700px;
+}
+
 .app-footer {
   position: fixed;
   bottom: 0;
@@ -40,7 +45,26 @@ a img {
   margin: 30px 40px 20px 0px;
 }
 
+.ppoint-box {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.header-nav {
+  display: none;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+
+@media screen and (min-width: 600px) {
+  .app-footer {
+    display: none;
+  }
+
+  .header-nav {
+    display: inline-block;
+  }
 }
