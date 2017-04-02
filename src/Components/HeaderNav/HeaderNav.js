@@ -4,8 +4,8 @@ import { browserHistory } from 'react-router';
 
 class HeaderNav extends Component {
 
-  loadLink() {
-    browserHistory.push('presentation')
+  loadLink(e) {
+    browserHistory.push(e.target.name)
   }
 
 
@@ -13,11 +13,11 @@ class HeaderNav extends Component {
     return (
       <div className="header-nav">
         <ul>
-          <a onClick={this.loadLink.bind(this)}>Presentation</a>
-          <li>About</li>
-          <li>Facebook</li>
-          <li>Video</li>
-          <li>Contact</li>
+          <a onClick={this.loadLink.bind(this)} name="presentation">About</a>
+          <a onClick={this.loadLink.bind(this)} name="services">Services</a>
+          <a onClick={this.loadLink.bind(this)} name="clients">Clients</a>
+          <a onClick={this.loadLink.bind(this)} name="blog">News</a>
+          <a onClick={this.loadLink.bind(this)} name="contact">Contact</a>
         </ul>
       </div>
     );
