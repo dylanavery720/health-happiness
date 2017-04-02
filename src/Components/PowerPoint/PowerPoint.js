@@ -62,7 +62,7 @@ class PowerPoint extends React.Component {
     const {finished, stepIndex} = this.state;
 
     return (
-      <div style={{maxWidth: 880, maxHeight: 500, margin: 'auto'}}>
+      <div className="ppcontainer" style={{maxWidth: 880, maxHeight: 500, margin: 'auto'}}>
         <MuiThemeProvider>
         <Stepper activeStep={stepIndex} orientation="vertical">
           <Step>

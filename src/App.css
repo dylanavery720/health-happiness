@@ -20,11 +20,6 @@
   font-size: large;
 }
 
-.powerpoint {
-  height: 400px;
-  width: 700px;
-}
-
 .app-footer {
   position: fixed;
   bottom: 0;
@@ -34,6 +29,11 @@
   z-index: 1;
 }
 
+.powerpoint {
+  height: 200px;
+  width: 320px;
+}
+
 h3 {
   font-family: 'Roboto', sans-serif;
   color: black;
@@ -41,7 +41,7 @@ h3 {
 
 a img {
   height: 100px;
-  width:200px;
+  width: 200px;
   margin: 30px 40px 20px 0px;
 }
 
@@ -98,17 +98,23 @@ a img {
   .header-logo {
     display: inline-block;
     float: left;
+    cursor: pointer;
+    border-radius: 50px 50px;
   }
 
   img {
     height: 100px;
     width: 200px;
-    border-radius: 50px 50px;
   }
 
   h3 {
     float: left;
     margin: 25 25 0 25;
+  }
+
+  .powerpoint {
+    height: 400px;
+    width: 700px;
   }
 
 }

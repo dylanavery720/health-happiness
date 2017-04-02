@@ -16,8 +16,7 @@ const routes = (
     <Route path="/" component={App}>
       <IndexRedirect to='/blog' />
       <Route path="/blog" component={Medium} />
-      <Route path="/about" component={Presentation} />
-      <Route path="/presentation" component={PowerPoint} />
+      <Route path="/about" component={PowerPoint} />
       <Route path="/contact" component={Contact} />
     </Route>
   </Router>

@@ -13,7 +13,7 @@ class HeaderNav extends Component {
     return (
       <div className="header-nav">
         <ul>
-          <a onClick={this.loadLink.bind(this)} name="presentation">About</a>
+          <a onClick={this.loadLink.bind(this)} name="about">About</a>
           <a onClick={this.loadLink.bind(this)} name="services">Services</a>
           <a onClick={this.loadLink.bind(this)} name="clients">Clients</a>
           <a onClick={this.loadLink.bind(this)} name="blog">News</a>
