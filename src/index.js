@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Medium from './Components/Medium/Medium'
+import Clients from './Components/Clients/Clients'
 import Presentation from './Components/Presentation/Presentation'
+import Services from './Components/Services/Services'
 import PowerPoint from './Components/PowerPoint/PowerPoint'
 import Contact from './Components/Contact/Contact'
 import './index.css';
@@ -18,6 +20,8 @@ const routes = (
       <Route path="/blog" component={Medium} />
       <Route path="/about" component={PowerPoint} />
       <Route path="/contact" component={Contact} />
+      <Route path="/services" component={Services} />
+      <Route path="/clients" component={Clients} />
     </Route>
   </Router>
 )
