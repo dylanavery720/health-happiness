@@ -16,9 +16,9 @@ injectTapEventPlugin();
 const routes = (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRedirect to='/blog' />
-      <Route path="/blog" component={Medium} />
+      <IndexRedirect to='/about' />
       <Route path="/about" component={PowerPoint} />
+      <Route path="/blog" component={Medium} />
       <Route path="/contact" component={Contact} />
       <Route path="/services" component={Services} />
       <Route path="/clients" component={Clients} />
